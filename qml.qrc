@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>icons/coffee-beans.png</file>
+        <file>SelectDrinkPage.qml</file>
+        <file>icons/empty_cup.png</file>
+    </qresource>
+</RCC>
