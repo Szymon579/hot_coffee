@@ -2,6 +2,7 @@ import QtQuick 2.15
 import QtQuick.Window 2.15
 
 Window {
+    id: mainWindow
     width: 500
     height: 700
     visible: true
