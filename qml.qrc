@@ -12,5 +12,8 @@
         <file>icons/flat_white.png</file>
         <file>icons/latte.png</file>
         <file>icons/back_arrow.png</file>
+        <file>PreparingPage.qml</file>
+        <file>icons/confirm.png</file>
+        <file>icons/confirm_circle.png</file>
     </qresource>
 </RCC>

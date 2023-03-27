@@ -1,6 +1,7 @@
 import QtQuick 2.15
 import QtQuick.Window 2.15
 
+
 Window {
     id: mainWindow
     width: 500
@@ -14,7 +15,7 @@ Window {
         color: "#EEC373"
         anchors.top: parent.top
         width: parent.width
-        height: parent.height * 0.75
+        height: parent.height * 0.8
 
         Image {
             id: coffeBeans
@@ -46,7 +47,7 @@ Window {
                 anchors.horizontalCenter: parent.horizontalCenter
                 anchors.verticalCenter: parent.verticalCenter
                 font.pointSize: parent.width * 0.1
-                //font.bold: true
+                font.bold: true
 
             }
         }
@@ -55,8 +56,12 @@ Window {
 
     SelectDrinkPage {
         id: selectDrinkPage
-        width: parent.width
-        height: parent.height
+        anchors.fill: parent
+    }
+
+    PreparingPage {
+        id: preparingPage
+        anchors.fill: parent
     }
 
 

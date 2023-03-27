@@ -38,88 +38,37 @@ Rectangle {
         //height: parent.height * 0.75
         anchors.top: topBar.bottom
         anchors.bottom: swipeViewControls.top
-        currentIndex: 1
+        currentIndex: 0
 
-        Rectangle {
-            id: page1
-            width: view.width
-            height: view.height
-            color: "#EEC373"
 
-            Image {
-                id: espressoImg
-                anchors.horizontalCenter: parent.horizontalCenter
-                anchors.verticalCenter: parent.verticalCenter
-                fillMode: Image.PreserveAspectFit
-                width: parent.width * 0.75
-                height: parent.height * 0.75
-                source: "qrc:/icons/espresso.png"
-            }
-
+        DrinkTypes {
+            src: "qrc:/icons/espresso.png"
+            name: "Espresso"
         }
 
-        Rectangle {
-            id: page2
-            width: view.width
-            height: view.height
-            color: "#EEC373"
-
-            Image {
-                id: latteImg
-                anchors.horizontalCenter: parent.horizontalCenter
-                anchors.verticalCenter: parent.verticalCenter
-                fillMode: Image.PreserveAspectFit
-                width: parent.width * 0.75
-                height: parent.height * 0.75
-                source: "qrc:/icons/latte.png"
-            }
-
+        DrinkTypes {
+            src: "qrc:/icons/latte.png"
+            name: "Latte"
         }
 
-        Rectangle {
-            id: page3
-            width: view.width
-            height: view.height
-            color: "#EEC373"
-
-            Image {
-                id: cappuccinoImg
-                anchors.horizontalCenter: parent.horizontalCenter
-                anchors.verticalCenter: parent.verticalCenter
-                fillMode: Image.PreserveAspectFit
-                width: parent.width * 0.75
-                height: parent.height * 0.75
-                source: "qrc:/icons/cappuccino.png"
-            }
-
+        DrinkTypes {
+            src: "qrc:/icons/flat_white.png"
+            name: "Flat White"
         }
 
-        Rectangle {
-            id: page4
-            width: view.width
-            height: view.height
-            color: "#EEC373"
-
-            Image {
-                id: flatWhiteImg
-                anchors.horizontalCenter: parent.horizontalCenter
-                anchors.verticalCenter: parent.verticalCenter
-                fillMode: Image.PreserveAspectFit
-                width: parent.width * 0.75
-                height: parent.height * 0.75
-                source: "qrc:/icons/flat_white.png"
-            }
-
+        DrinkTypes {
+            src: "qrc:/icons/cappuccino.png"
+            name: "Cappuccino"
         }
 
-    }
+    } //swipeView
 
     PageIndicator {
         id: indicator
 
             count: view.count
             currentIndex: view.currentIndex
-
+            visible: false
             anchors.bottom: view.bottom
             anchors.horizontalCenter: parent.horizontalCenter
 
@@ -129,14 +78,14 @@ Rectangle {
         id: swipeViewControls
         color: "#CA965C"
         width: parent.width
-        height: parent.height * 0.25
+        height: parent.height * 0.2
         anchors.bottom: parent.bottom
 
         Rectangle {
             id: leftButton
             color: "transparent"
             height: parent.height
-            width: parent.width / 2
+            width: parent.width / 3
             anchors.left: parent.left
             Image {
                 id: leftArrowImg
@@ -150,7 +99,32 @@ Rectangle {
 
             MouseArea {
                 anchors.fill: parent
+                cursorShape: Qt.PointingHandCursor
                 onClicked: view.decrementCurrentIndex()
+            }
+
+        }
+
+        Rectangle {
+            id: acceptButton
+            color: "transparent"
+            height: parent.height
+            width: parent.width / 3
+            anchors.horizontalCenter: parent.horizontalCenter
+            Image {
+                id: acceptImg
+                anchors.horizontalCenter: parent.horizontalCenter
+                anchors.verticalCenter: parent.verticalCenter
+                fillMode: Image.PreserveAspectFit
+                width: parent.width * 0.75
+                height: parent.height * 0.75
+                source: "qrc:/icons/confirm_circle.png"
+            }
+
+            MouseArea {
+                anchors.fill: parent
+                cursorShape: Qt.PointingHandCursor
+                onClicked: preparingPage.visible = true
             }
 
         }
@@ -159,7 +133,7 @@ Rectangle {
             id: rightButton
             color: "transparent"
             height: parent.height
-            width: parent.width / 2
+            width: parent.width / 3
             anchors.right: parent.right
             Image {
                 id: rightArrowImg
@@ -173,6 +147,7 @@ Rectangle {
 
             MouseArea {
                 anchors.fill: parent
+                cursorShape: Qt.PointingHandCursor
                 onClicked: view.incrementCurrentIndex()
             }
 
