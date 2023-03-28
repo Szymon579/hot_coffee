@@ -40,18 +40,37 @@ Rectangle {
             anchors.right: sugarIcon.left
             color: "transparent"
             Slider {
+                id: control
                 anchors.horizontalCenter: parent.horizontalCenter
                 anchors.verticalCenter: parent.verticalCenter
                 width: parent.width * 0.8
-
+                
+                background: Rectangle {
+                        x: control.leftPadding
+                        y: control.topPadding + control.availableHeight / 2 - height / 2
+                        implicitWidth: 200
+                        //implicitHeight: 5
+                        width: control.availableWidth
+                        height: sugarSlider.height * 0.09
+                        radius: 2
+                        color: "black"
+                
+                        Rectangle {
+                            width: control.visualPosition * parent.width
+                            height: parent.height
+                            color: "black"
+                            radius: 2
+                        }
+                    }
+                
                 handle: Rectangle {
                         x: control.leftPadding + control.visualPosition * (control.availableWidth - width)
                         y: control.topPadding + control.availableHeight / 2 - height / 2
                         implicitWidth: 26
                         implicitHeight: 26
-                        radius: 13
-                        color: control.pressed ? "#f0f0f0" : "#f6f6f6"
-                        border.color: "#bdbebf"
+                        radius: 3
+                        color: "black"
+                        border.color: "black"
                     }
 
                 from: 0

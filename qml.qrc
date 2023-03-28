@@ -15,5 +15,6 @@
         <file>PreparingPage.qml</file>
         <file>icons/confirm.png</file>
         <file>icons/confirm_circle.png</file>
+        <file>icons/sugar_cubes.png</file>
     </qresource>
 </RCC>
