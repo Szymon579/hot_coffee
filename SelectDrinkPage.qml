@@ -40,19 +40,10 @@ Rectangle {
             anchors.right: sugarIcon.left
             color: "transparent"
             Slider {
+                id: control
                 anchors.horizontalCenter: parent.horizontalCenter
                 anchors.verticalCenter: parent.verticalCenter
                 width: parent.width * 0.8
-
-                handle: Rectangle {
-                        x: control.leftPadding + control.visualPosition * (control.availableWidth - width)
-                        y: control.topPadding + control.availableHeight / 2 - height / 2
-                        implicitWidth: 26
-                        implicitHeight: 26
-                        radius: 13
-                        color: control.pressed ? "#f0f0f0" : "#f6f6f6"
-                        border.color: "#bdbebf"
-                    }
 
                 from: 0
                 to: 4
@@ -60,10 +51,38 @@ Rectangle {
                 value: 2
                 snapMode: Slider.SnapOnRelease
 
+                //styling
+                background: Rectangle {
+                        x: control.leftPadding
+                        y: control.topPadding + control.availableHeight / 2 - height / 2
+                        implicitWidth: 200
+                        //implicitHeight: 5
+                        width: control.availableWidth
+                        height: sugarSlider.height * 0.09
+                        radius: 2
+                        color: "black"
 
+                        Rectangle {
+                            width: control.visualPosition * parent.width
+                            height: parent.height
+                            color: "black"
+                            radius: 2
+                        }
+                    }
+
+                handle: Rectangle {
+                        x: control.leftPadding + control.visualPosition * (control.availableWidth - width)
+                        y: control.topPadding + control.availableHeight / 2 - height / 2
+                        width: sugarSlider.height * 0.3
+                        height: sugarSlider.height * 0.5
+                        radius: 3
+                        color: "black"
+                        border.color: "black"
+                    }
             }
         }
 
+        //right corner icon
         Rectangle {
             id: sugarIcon
             height: parent.height
@@ -106,8 +125,13 @@ Rectangle {
         }
 
         DrinkTypes {
-            src: "qrc:/icons/cappuccino.png"
+            src: "qrc:/icons/cappucino.png"
             name: "Cappuccino"
+        }
+
+        DrinkTypes {
+            src: "qrc:/icons/macchiato.png"
+            name: "Macchiato"
         }
 
     } //swipeView

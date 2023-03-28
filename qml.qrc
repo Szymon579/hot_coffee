@@ -7,7 +7,6 @@
         <file>DrinkTypes.qml</file>
         <file>icons/left-arrow.png</file>
         <file>icons/right-arrow.png</file>
-        <file>icons/cappuccino.png</file>
         <file>icons/espresso.png</file>
         <file>icons/flat_white.png</file>
         <file>icons/latte.png</file>
@@ -16,5 +15,7 @@
         <file>icons/confirm.png</file>
         <file>icons/confirm_circle.png</file>
         <file>icons/sugar_cubes.png</file>
+        <file>icons/cappucino.png</file>
+        <file>icons/macchiato.png</file>
     </qresource>
 </RCC>
