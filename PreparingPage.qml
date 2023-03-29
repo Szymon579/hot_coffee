@@ -105,7 +105,7 @@ Rectangle {
 
 
         Text {
-            text: animation.stopped() ? "Preparing..." : "Ready!"
+            text: "Preparing..."
             color: "black"//"#EEC373"
             anchors.horizontalCenter: parent.horizontalCenter
             anchors.verticalCenter: parent.verticalCenter
